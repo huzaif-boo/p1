@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Options</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fda085 0%, #f6d365 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container-custom {
+            max-width: 480px;
+            background: rgba(255,255,255,0.98);
+            padding: 38px 36px 32px 36px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px #2222, 0 1.5px 8px #fda08544;
+            animation: popIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.92) translateY(40px); opacity: 0; }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        h2 {
+            color: #b85d1c;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        h3 {
+            color: #fda085;
+            font-size: 1.13em;
+            margin-bottom: 8px;
+        }
+        .section {
+            margin-bottom: 28px;
+            background: #fff7f0;
+            border-radius: 10px;
+            padding: 18px 16px 10px 16px;
+            box-shadow: 0 1px 4px #fda08533;
+        }
+        .option {
+            margin: 10px 0 0 0;
+            display: flex;
+            align-items: center;
+        }
+        .recommend {
+            color: #fda085;
+            font-weight: bold;
+            font-size: 0.98em;
+            margin-left: 6px;
+            letter-spacing: 0.5px;
+        }
+        .online-fields {
+            display: none;
+            margin-left: 24px;
+            margin-top: 12px;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .online-fields label {
+            display: block;
+            margin-bottom: 6px;
+            color: #b85d1c;
+            font-size: 0.98em;
+            font-weight: 500;
+        }
+        .online-fields input {
+            width: 96%;
+            padding: 8px 10px;
+            margin-bottom: 14px;
+            border: 1.5px solid #fbc2a0;
+            border-radius: 6px;
+            font-size: 1em;
+            background: #fff4e6;
+            transition: border 0.2s;
+        }
+        .online-fields input:focus {
+            border: 1.5px solid #fda085;
+            outline: none;
+            background: #fff0e0;
+        }
+        .section p {
+            margin-left: 24px;
+            color: #b85d1c;
+            font-size: 0.98em;
+        }
+        .btn-custom {
+            width: 100%;
+            padding: 14px 0;
+            background: linear-gradient(90deg, #fda085 0%, #f6d365 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.13em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 12px #fda08544;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            margin-top: 8px;
+        }
+        .btn-custom:hover {
+            background: linear-gradient(90deg, #fda085 0%, #fbc687 100%);
+            transform: translateY(-2px) scale(1.03);
+        }
+        /* Bootstrap radio override for accent color */
+        .form-check-input:checked {
+            background-color: #fda085;
+            border-color: #fda085;
+        }
+    </style>
+</head>
+<body>
+<div class="container-custom shadow-lg">
+    <h2>Choose Payment Method</h2>
+    <div class="section mb-4">
+        <h3>Online Payment <span class="recommend">(Recommended)</span></h3>
+        <div class="option form-check">
+            <input class="form-check-input" type="radio" id="online" name="payment" checked>
+            <label class="form-check-label ms-2" for="online">Pay securely using our app</label>
+        </div>
+        <div class="online-fields" id="onlineFields">
+            <label for="bankAccount">Bank Account Number</label>
+            <input type="text" class="form-control mb-2" id="bankAccount" name="bankAccount" placeholder="Enter bank account number">
+            <label for="bankName">Bank Name</label>
+            <input type="text" class="form-control mb-2" id="bankName" name="bankName" placeholder="Enter bank name">
+            <label for="panCard">PAN Card Number</label>
+            <input type="text" class="form-control mb-2" id="panCard" name="panCard" placeholder="Enter PAN card number">
+            <label for="upiId">UPI ID</label>
+            <input type="text" class="form-control mb-2" id="upiId" name="upiId" placeholder="Enter UPI ID">
+            <label for="atmNumber">ATM Number</label>
+            <input type="text" class="form-control mb-2" id="atmNumber" name="atmNumber" placeholder="Enter ATM number">
+        </div>
+        <p>Fast, secure, and recommended for instant confirmation.</p>
+    </div>
+    <div class="section mb-4">
+        <h3>Offline Payment</h3>
+        <div class="option form-check">
+            <input class="form-check-input" type="radio" id="cod" name="payment">
+            <label class="form-check-label ms-2" for="cod">Cash on Delivery (COD)</label>
+        </div>
+        <p>Pay with cash when your order arrives.</p>
+    </div>
+    <button class="btn btn-custom">Proceed to Pay</button>
+</div>
+<!-- Bootstrap JS (optional, for future use) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const onlineRadio = document.getElementById('online');
+    const codRadio = document.getElementById('cod');
+    const onlineFields = document.getElementById('onlineFields');
+
+    function toggleFields() {
+        if (onlineRadio.checked) {
+            onlineFields.style.display = 'block';
+        } else {
+            onlineFields.style.display = 'none';
+        }
+    }
+
+    onlineRadio.addEventListener('change', toggleFields);
+    codRadio.addEventListener('change', toggleFields);
+
+    // Show fields by default if online is checked
+    toggleFields();
+
+    function showConfirmationMessage() {
+        // Create overlay
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = 0;
+        overlay.style.left = 0;
+        overlay.style.width = '100vw';
+        overlay.style.height = '100vh';
+        overlay.style.background = 'rgba(127,90,240,0.18)';
+        overlay.style.zIndex = '9998';
+        overlay.style.opacity = '0';
+        overlay.style.transition = 'opacity 0.5s';
+
+        // Create message container
+        const msg = document.createElement('div');
+        msg.innerHTML = `
+            <div style="display:flex;flex-direction:column;align-items:center;">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="32" fill="#4BB543"/>
+                    <path d="M18 34L28 44L46 26" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div style="margin-top:18px;font-size:1.7em;font-weight:bold;letter-spacing:1px;color:#7f5af0;">Congratulations!</div>
+                <div style="margin-top:8px;font-size:1.1em;color:#444;">Your order is confirmed</div>
+            </div>
+        `;
+        msg.style.position = 'fixed';
+        msg.style.top = '50%';
+        msg.style.left = '50%';
+        msg.style.transform = 'translate(-50%, -50%) scale(0.9)';
+        msg.style.background = '#fff';
+        msg.style.color = '#222';
+        msg.style.padding = '36px 48px 32px 48px';
+        msg.style.borderRadius = '18px';
+        msg.style.boxShadow = '0 8px 32px #7f5af044';
+        msg.style.zIndex = '9999';
+        msg.style.opacity = '0';
+        msg.style.transition = 'opacity 0.6s, transform 0.6s cubic-bezier(.68,-0.55,.27,1.55)';
+
+        document.body.appendChild(overlay);
+        document.body.appendChild(msg);
+
+        // Animate in
+        setTimeout(() => {
+            overlay.style.opacity = '1';
+            msg.style.opacity = '1';
+            msg.style.transform = 'translate(-50%, -50%) scale(1.05)';
+        }, 100);
+
+        // Animate out after 2.5s, then redirect
+        setTimeout(() => {
+            overlay.style.opacity = '0';
+            msg.style.opacity = '0';
+            msg.style.transform = 'translate(-50%, -50%) scale(0.95)';
+            setTimeout(() => {
+                document.body.removeChild(msg);
+                document.body.removeChild(overlay);
+                window.location.href = 'wellcome home.html';
+            }, 600);
+        }, 2500);
+    }
+
+    document.querySelector('button').addEventListener('click', function(e) {
+        e.preventDefault();
+        showConfirmationMessage();
+    });
+</script>
+</body>
+</html>

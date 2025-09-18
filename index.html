@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/diist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .login-container {
+            background: #f1f0f0;
+            padding: 2rem 2.5rem;
+            border-radius: 16px;
+            
+            box-shadow:
+                0 8px 32px rgba(0,0,0,0.12),
+                0 1.5px 3px rgba(46, 10, 113, 0.08),
+                0 2px 8px 2px #814602,
+                0 0 0 8px #e0e5ec;
+            display: flex;
+            flex-direction: column;
+            min-width: 340px;
+            border: 1px solid #e3e8ee;
+            transition: box-shadow 0.2s, transform 0.2s;
+            perspective: 800px;
+            transform-style: preserve-3d;
+        }
+        .login-container:hover {
+            box-shadow:
+                0 12px 40px rgba(79,140,255,0.18),
+                0 2px 6px rgba(0,0,0,0.10),
+                0 4px 16px 4px #bfc9d9,
+                0 0 0 12px #e0e5ec;
+            transform: rotateY(8deg) scale(1.03);
+        }
+        .login-container h2 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #eb7725;
+            letter-spacing: 1px;
+            font-weight: 600;
+            text-shadow: 0 2px 8px #e0e5ec, 0 1px 0 #bfc9d9;
+        }
+        .login-container label {
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-size: 1rem;
+            font-weight: 500;
+            text-shadow: 0 1px 0 #e0e5ec;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            padding: 0.6rem 0.8rem;
+            margin-bottom: 1.2rem;
+            border: 1.5px solid #cfd9df;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #f7fafc;
+            transition: border 0.2s, box-shadow 0.2s;
+            outline: none;
+            box-shadow: 0 2px 8px #e0e5ec inset, 0 1px 2px #bfc9d9;
+        }
+        .login-container input[type="text"]:focus,
+        .login-container input[type="password"]:focus {
+            border: 1.5px solid #ffa14f;
+            box-shadow: 0 0 0 2px #e3eefd, 0 2px 8px #e0e5ec inset;
+            background: #fff;
+        }
+        .login-container button {
+            padding: 0.8rem;
+            background: linear-gradient(90deg, #ffcd4f 60%, #eb9c25 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+            box-shadow: 0 4px 16px #bfc9d9, 0 2px 8px #e0e5ec;
+        }
+        .login-container button:hover {
+            background: linear-gradient(90deg, #2563eb 60%, #4f8cff 100%);
+            transform: translateY(-2px) scale(1.05) rotateX(8deg);
+            box-shadow: 0 8px 32px #bfc9d9, 0 4px 16px #e0e5ec;
+        }
+        .login-container input[type="text"]::placeholder,
+        .login-container input[type="password"]::placeholder {
+            color: #b0b8c1;
+            font-size: 0.98rem;
+            text-shadow: 0 1px 0 #e0e5ec;
+        }
+        @media (max-width: 480px) {
+            .login-container {
+                min-width: 90vw;
+                padding: 1.2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form class="login-container">
+        <h2>Login</h2>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required placeholder="Enter your username">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required placeholder="Enter your password">
+        <button type="submit" formaction="wellcome home.html">Log In</button>
+    </form>
+</body>
+</html>

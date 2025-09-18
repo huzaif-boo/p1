@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clothing Shop</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-top: 30px;
+      letter-spacing: 2px;
+      font-size: 2.8rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 40px auto;
+      max-width: 1200px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+      margin: 18px;
+      width: 220px;
+      padding: 22px 18px 18px 18px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-card:hover {
+      transform: translateY(-10px) scale(1.04);
+      box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.22);
+    }
+    .product-card img {
+      width: 160px;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      transition: transform 0.2s;
+    }
+    .product-card:hover img {
+      transform: scale(1.07) rotate(-2deg);
+    }
+    .product-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    .product-price {
+      font-size: 1.1rem;
+      color: #f76b1c;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .buy-btn {
+      background: linear-gradient(90deg, #fda085 0%, #f6d365 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 28px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(253,160,133,0.18);
+      transition: background 0.2s, box-shadow 0.2s;
+      margin-top: 8px;
+    }
+    .buy-btn:hover {
+      background: linear-gradient(90deg, #f6d365 0%, #fda085 100%);
+      box-shadow: 0 4px 16px rgba(253,160,133,0.22);
+    }
+    @media (max-width: 700px) {
+      .products {
+        flex-direction: column;
+        align-items: center;
+      }
+      .product-card {
+        width: 90vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav style="background: #fff; box-shadow: 0 2px 12px #fda08522; padding: 16px 0; margin-bottom: 18px;">
+    <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
+      <a href="#tshirt" style="color: #fda085; font-weight: bold; text-decoration: none; font-size: 1.1em; transition: color 0.2s;">T-Shirt</a>
+      <a href="#shirt" style="color: #fda085; font-weight: bold; text-decoration: none; font-size: 1.1em; transition: color 0.2s;">Shirt</a>
+      <a href="pant.html" style="color: #fda085; font-weight: bold; text-decoration: none; font-size: 1.1em; transition: color 0.2s;">Pant</a>
+      <a href="#jecket" style="color: #fda085; font-weight: bold; text-decoration: none; font-size: 1.1em; transition: color 0.2s;">Jecket</a>
+      <a href="#huddi" style="color: #fda085; font-weight: bold; text-decoration: none; font-size: 1.1em; transition: color 0.2s;">Huddi</a>
+    </div>
+  </nav>  
+
+  <h1>Clothing Shop</h1>
+
+  <div class="products">
+    <div class="product-card" onclick="gotopayment('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2', 'Woolen Sweater', 799)">
+      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2" alt="Sweater">
+      <div class="product-title">Woolen Sweater</div>
+      <div class="product-price">₹799</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product-card" onclick="gotopayment('https://images.unsplash.com/photo-1512436991461-6745cdb1723f', 'Men\'s Polo Shirt', 599)">
+      <img src="https://images.unsplash.com/photo-1512436991461-6745cdb1723f" alt="Polo Shirt">
+      <div class="product-title">Men's Polo Shirt</div>
+      <div class="product-price">₹599</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product-card" onclick="gotopayment('https://images.unsplash.com/photo-146511046530-73998cf728ca', 'Pleated Skirt', 699)">
+      <img src="https://images.unsplash.com/photo-146511046530-73998cf728ca" alt="Skirt">
+      <div class="product-title">Pleated Skirt</div>
+      <div class="product-price">₹699</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product-card" onclick="gotopayment('pic1.jpg.jpg', 't-shirt', 699)">
+      <img src="pic1.jpg.jpg" alt="t-shirt">
+      <div class="product-title">T-Shirt</div>
+      <div class="product-price">₹699</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product-card" onclick="gotopayment('https://images.unsplash.com/photo-1517841905240-472988babdf9', 'Classic T-Shirt', 499)">
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9" alt="Classic T-Shirt">
+      <div class="product-title">Classic T-Shirt</div>
+      <div class="product-price">₹499</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product-card" onclick="gotopayment('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e', 'Summer Dress', 899)">
+      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="Summer Dress">
+      <div class="product-title">Summer Dress</div>
+      <div class="product-price">₹899</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product-card" onclick="gotopayment('https://images.unsplash.com/photo-1469398715555-76331a6c7fa0', 'Blue Jeans', 999)">
+      <img src="https://images.unsplash.com/photo-1469398715555-76331a6c7fa0" alt="Blue Jeans">
+      <div class="product-title">Blue Jeans</div>
+      <div class="product-price">₹999</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+  </div>
+
+  <script>
+    // Make the whole card and the button clickable
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.addEventListener('click', function(e) {
+        if (e.target.classList.contains('buy-btn') || e.target.tagName === 'IMG' || e.target.classList.contains('product-card')) {
+          // Already handled by onclick attribute
+        }
+      });
+    });
+
+    function gotopayment(images, title, price) {
+      localStorage.setItem('productimage', images);
+      localStorage.setItem('producttitle', title);
+      localStorage.setItem('productprice', price);
+      window.location.href = 'contact.html';
+    }
+  </script>
+
+</body>
+</html>
